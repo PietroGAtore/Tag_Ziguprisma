@@ -30,3 +30,14 @@ Após descompactar o arquivo, siga estas etapas para rodar o projeto localmente:
 ## 📄 Licença
 
 Este projeto está sob a licença [MIT](LICENSE).
+
+
+## 🏆 Créditos
+
+Este projeto foi feito por
+- Hugo Alves Paiva
+- Pietro Galastre Atore
+- Alex Avramides Levin
+- Reginaldo Aquino
+- Ryan Gonçalves
+- Raphael Delaroli Bezerra Couto
