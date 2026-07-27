@@ -23,7 +23,7 @@ Siga o passo a passo abaixo:
 Após descompactar o arquivo, siga estas etapas para rodar o projeto localmente:
 
 1. Abra a pasta extraída e clique duas vezes no arquivo Index.html.(alternativamente você pode arrastar o arquivo para a barra de pesquisa do seu navegador)
-2. Comece a jogar
+2. Comece a jogar(Use as setas do teclado)
 
 ---
 
