@@ -18,7 +18,7 @@ Siga o passo a passo abaixo:
 
 ---
 
-## 🛠️ Próximos Passos (Como Executar)
+## 🎮 Próximos Passos (Como Jogar)
 
 Após descompactar o arquivo, siga estas etapas para rodar o projeto localmente:
 
