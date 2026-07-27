@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Tag Ziguprisma</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Tela Inicial -->
+    <div id="inicio" class="tela">
+        <img src="img/inicio.png" id="imagemInicio">
+        <h1></h1>
+        <button onclick="iniciarJogo()">Iniciar</button>
+    </div>
+
+    <!-- Tela Principal -->
+    <div id="jogo" class="tela escondido">
+        <h2 id="turno"></h2>
+        <img id="imagemCena">
+        <p id="descricao"></p>
+        <p id="dicaDistancia"></p>
+    </div>
+
+    <!-- Tela de Troca -->
+    <div id="passagem" class="tela escondido">
+        <h2 id="textoPassagem"></h2>
+        <button onclick="continuarTurno()">Continuar</button>
+    </div>
+
+    <!-- Tela Final -->
+    <div id="final" class="tela escondido">
+        <img id="imagemFinal">
+        <h1 id="textoFinal"></h1>
+    </div>
+
+    <script src="js/jogo.js"></script>
+
+</body>
+</html>

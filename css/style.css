@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #0a0a0a;
+    color: #ddd;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.tela {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    max-width: 600px;
+    width: 100%;
+    padding: 2rem 1.5rem;
+}
+
+.escondido {
+    display: none !important;
+}
+
+img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+h1 {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #eee;
+}
+
+h2 {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: #555;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 13px;
+    color: #555;
+    text-align: center;
+    line-height: 1.7;
+}
+
+button {
+    font-size: 13px;
+    color: #888;
+    background: transparent;
+    border: 0.5px solid #2a2a2a;
+    border-radius: 4px;
+    padding: 10px 28px;
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+button:hover {
+    border-color: #555;
+    color: #eee;
+}
