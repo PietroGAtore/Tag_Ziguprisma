@@ -31,6 +31,11 @@ Após descompactar o arquivo, siga estas etapas para rodar o projeto localmente:
 
 Este projeto está sob a licença [MIT](LICENSE).
 
+Music: Blockbuster by Alex-Productions https://soundcloud.com/alexproductionsmusic
+License: Creative Commons — Attribution 3.0 Unported — CC BY 3.0
+Free Download / Stream: https://links.al/oZB
+Music promoted by Audio Library: https://links.al/youtube
+
 
 ## 🏆 Créditos
 
