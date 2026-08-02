@@ -12,6 +12,10 @@
         <img src="img/inicio.png" id="imagemInicio">
         <h1></h1>
         <button onclick="iniciarJogo()">Iniciar</button>
+        <ul class="tutorial">
+            <li><span>↑ ↓ ← →  /  W A S D</span> mover</li>
+            <li><span>espaço</span> iniciar · passar turno · reiniciar</li>
+        </ul>
     </div>
 
     <!-- Tela Principal -->
@@ -20,18 +24,29 @@
         <img id="imagemCena">
         <p id="descricao"></p>
         <p id="dicaDistancia"></p>
+        <ul class="tutorial">
+            <li><span>↑ ↓ ← →  /  W A S D</span> mover</li>
+            <li><span>espaço</span> passar turno</li>
+        </ul>
     </div>
 
     <!-- Tela de Troca -->
     <div id="passagem" class="tela escondido">
         <h2 id="textoPassagem"></h2>
         <button onclick="continuarTurno()">Continuar</button>
+        <ul class="tutorial">
+            <li><span>espaço</span> continuar</li>
+        </ul>
     </div>
 
     <!-- Tela Final -->
     <div id="final" class="tela escondido">
         <img id="imagemFinal">
         <h1 id="textoFinal"></h1>
+        <button onclick="voltarAoInicio()">Voltar ao início</button>
+        <ul class="tutorial">
+            <li><span>espaço</span> reiniciar</li>
+        </ul>
     </div>
 
     <script src="js/jogo.js"></script>

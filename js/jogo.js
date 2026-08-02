@@ -13,6 +13,29 @@ while (j1.x === j2.x && j1.y === j2.y) {
     j2.y = Math.floor(Math.random() * 3);
 }
 
+// --- ÁUDIO ---
+const audioProx     = new Audio("audios/audio_prox.mp3");
+const audioMuitoProx = new Audio("audios/audio_muito_prox.mp3");
+audioProx.loop      = true;
+audioMuitoProx.loop = true;
+
+function pararAudios() {
+    audioProx.pause();
+    audioProx.currentTime = 0;
+    audioMuitoProx.pause();
+    audioMuitoProx.currentTime = 0;
+}
+
+function tocarAudioDistancia(distancia) {
+    pararAudios();
+    if (distancia === 1) {
+        audioMuitoProx.play();
+    } else if (distancia >= 2 && distancia <= 3) {
+        audioProx.play();
+    }
+    // distancia >= 4: silêncio
+}
+
 function mover(jogador, direcao) {
     if (direcao === "direita") {
         jogador.x++;
@@ -40,11 +63,25 @@ function mover(jogador, direcao) {
     }
 }
 
+// --- TECLADO: setas, WASD e espaço ---
 document.addEventListener("keydown", function (event) {
-    if (event.key === "ArrowUp")    jogar("cima");
-    if (event.key === "ArrowDown")  jogar("baixo");
-    if (event.key === "ArrowLeft")  jogar("esquerda");
-    if (event.key === "ArrowRight") jogar("direita");
+    // Movimentação
+    if (event.key === "ArrowUp"    || event.key === "w") jogar("cima");
+    if (event.key === "ArrowDown"  || event.key === "s") jogar("baixo");
+    if (event.key === "ArrowLeft"  || event.key === "a") jogar("esquerda");
+    if (event.key === "ArrowRight" || event.key === "d") jogar("direita");
+
+    // Espaço — age conforme a tela ativa
+    if (event.key === " ") {
+        event.preventDefault();
+        const inicio   = document.getElementById("inicio");
+        const passagem = document.getElementById("passagem");
+        const final    = document.getElementById("final");
+
+        if (!inicio.classList.contains("escondido"))        iniciarJogo();
+        else if (!passagem.classList.contains("escondido")) continuarTurno();
+        else if (!final.classList.contains("escondido"))    voltarAoInicio();
+    }
 });
 
 function encontrou(j1, j2) {
@@ -59,6 +96,7 @@ function jogar(direcao) {
     }
 
     if (encontrou(j1, j2)) {
+        pararAudios();
         mostrarFinal(turnoatual);
         return;
     }
@@ -118,7 +156,7 @@ function atualizarCena() {
     let dados = locais[chave][turnoatual];
 
     document.getElementById("imagemCena").src = dados.imagem;
-    document.getElementById("descricao").innerText = dados.texto;
+    // document.getElementById("descricao").innerText = dados.texto;
     document.getElementById("turno").innerText = "Turno: " + (turnoatual === "j1" ? "Jogador 1" : "Jogador 2");
 
     atualizarDistancia();
@@ -137,9 +175,15 @@ function atualizarDistancia() {
     }
 
     document.getElementById("dicaDistancia").innerText = texto;
+
+    // Toca o áudio correspondente à distância
+    tocarAudioDistancia(distancia);
 }
 
 function mostrarPassagem() {
+    // Para o áudio ao trocar de turno
+    pararAudios();
+
     document.getElementById("jogo").classList.add("escondido");
     document.getElementById("passagem").classList.remove("escondido");
 
@@ -154,6 +198,21 @@ function continuarTurno() {
     document.getElementById("jogo").classList.remove("escondido");
 
     atualizarCena();
+}
+
+function voltarAoInicio() {
+    j1.x = Math.floor(Math.random() * 3);
+    j1.y = Math.floor(Math.random() * 3);
+    j2.x = Math.floor(Math.random() * 3);
+    j2.y = Math.floor(Math.random() * 3);
+    while (j1.x === j2.x && j1.y === j2.y) {
+        j2.x = Math.floor(Math.random() * 3);
+        j2.y = Math.floor(Math.random() * 3);
+    }
+    turnoatual = "j1";
+
+    document.getElementById("final").classList.add("escondido");
+    document.getElementById("inicio").classList.remove("escondido");
 }
 
 function mostrarFinal(vencedor) {

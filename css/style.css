@@ -71,3 +71,31 @@ button:hover {
     border-color: #555;
     color: #eee;
 }
+
+/* Tutorial de comandos */
+.tutorial {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 0.5rem;
+}
+
+.tutorial li {
+    font-size: 12px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tutorial li span {
+    font-size: 11px;
+    color: #444;
+    background: #161616;
+    border: 0.5px solid #2a2a2a;
+    border-radius: 3px;
+    padding: 3px 8px;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
